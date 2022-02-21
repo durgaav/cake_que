@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cake_que/cart_activity.dart';
 import 'package:cake_que/other_vendors.dart';
 import 'package:group_button/group_button.dart';
 import 'package:flutter/cupertino.dart';
@@ -119,7 +120,10 @@ double opacity = 0.0;
                       child: CircleAvatar(
                         backgroundColor: Color(0Xffc40ca3),
                           radius: 15,
-                          child: IconButton(onPressed: (){}, icon:Icon(Icons.shopping_cart,color: Colors.white,size: 15,))
+                          child: IconButton(onPressed: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>CartActivity()));
+                          },
+                              icon:Icon(Icons.shopping_cart,color: Colors.white,size: 15,))
                       )
                   ),
                   Positioned(

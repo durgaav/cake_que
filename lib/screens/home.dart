@@ -1,4 +1,5 @@
 import 'package:cake_que/cart_activity.dart';
+import 'package:cake_que/product_detials.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -289,83 +290,89 @@ class _HomeState extends State<Home> {
                               slivers: [
                                 SliverList(
                                     delegate: SliverChildBuilderDelegate(
-                                        (context , index)=>Container(
-                                          margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
-                                          child:Stack(
-                                            children: [
-                                              Container(
-                                                margin: EdgeInsets.only(top: 55),
-                                                height: 100,
-                                                child: Card(
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius.circular(18.0),
-                                                  ),
-                                                  elevation: 10,
-                                                  child: ListTile(),
-                                                ),
-                                              ),
-                                              Positioned(
-                                                bottom:40,
-                                                left:20,
-                                                child: Container(
-                                                  height : 100,
-                                                  width:100,
-                                                  decoration: BoxDecoration(
-                                                    image: DecorationImage(
-                                                        image: NetworkImage("https://www.pngitem.com/pimgs/m/22-221065_pastry-cake-png-transparent-png.png"),
-                                                        fit: BoxFit.cover
+                                        (context , index)=>GestureDetector(
+                                          onTap: (){
+                                            Navigator.push(context, MaterialPageRoute(
+                                                builder: (context)=>ProductDetials()));
+                                          },
+                                          child: Container(
+                                            margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
+                                            child:Stack(
+                                              children: [
+                                                Container(
+                                                  margin: EdgeInsets.only(top: 55),
+                                                  height: 100,
+                                                  child: Card(
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius.circular(18.0),
                                                     ),
-                                                    color: Colors.white54,
-                                                    shape: BoxShape.circle,
+                                                    elevation: 10,
+                                                    child: ListTile(),
                                                   ),
                                                 ),
-                                              ),
-                                              Positioned(
-                                                left:140,
-                                                top:70,
-                                                child: Row(
-                                                  children: [
-                                                    Column(
-                                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                                      children: [
-                                                        Container(
-                                                            width:100,
-                                                            child: Text(
-                                                              "${cakeNames[index]}",style: TextStyle(color: Colors.pink,fontSize: 16,fontWeight: FontWeight.bold)
-                                                              ,maxLines: 2,)),
-                                                        Row(
-                                                          children: [
-                                                            Text('₹215 ',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold),),
-                                                            Text('₹300',style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal
-                                                                ,fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough
-                                                            ),),
-                                                          ],
-                                                        )
-                                                      ],
+                                                Positioned(
+                                                  bottom:40,
+                                                  left:20,
+                                                  child: Container(
+                                                    height : 100,
+                                                    width:100,
+                                                    decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                          image: NetworkImage("https://www.pngitem.com/pimgs/m/22-221065_pastry-cake-png-transparent-png.png"),
+                                                          fit: BoxFit.cover
+                                                      ),
+                                                      color: Colors.white54,
+                                                      shape: BoxShape.circle,
                                                     ),
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    // ,
-                                                    InkWell
-                                                      (
-                                                        onTap: (){
-                                                          print("add to favorite");
-                                                        },
-                                                        child:Icon(Icons.shopping_basket_outlined,color: Colors.pink,)),
-                                                    SizedBox(
-                                                      width: 10,
-                                                    ),
-                                                    InkWell
-                                                      (
-                                                        onTap: (){
-                                                          print("add to favorite");
-                                                        },
-                                                        child: Icon(Icons.favorite,color: Colors.deepPurple,))
-                                                  ],
+                                                  ),
                                                 ),
-                                              ),
-                                            ],
+                                                Positioned(
+                                                  left:140,
+                                                  top:70,
+                                                  child: Row(
+                                                    children: [
+                                                      Column(
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        children: [
+                                                          Container(
+                                                              width:100,
+                                                              child: Text(
+                                                                "${cakeNames[index]}",style: TextStyle(color: Colors.pink,fontSize: 16,fontWeight: FontWeight.bold)
+                                                                ,maxLines: 2,)),
+                                                          Row(
+                                                            children: [
+                                                              Text('₹215 ',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold),),
+                                                              Text('₹300',style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal
+                                                                  ,fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough
+                                                              ),),
+                                                            ],
+                                                          )
+                                                        ],
+                                                      ),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      // ,
+                                                      InkWell
+                                                        (
+                                                          onTap: (){
+                                                            print("add to favorite");
+                                                          },
+                                                          child:Icon(Icons.shopping_basket_outlined,color: Colors.pink,)),
+                                                      SizedBox(
+                                                        width: 10,
+                                                      ),
+                                                      InkWell
+                                                        (
+                                                          onTap: (){
+                                                            print("add to favorite");
+                                                          },
+                                                          child: Icon(Icons.favorite,color: Colors.deepPurple,))
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
                                         ),
                                        childCount: cakeNames.length

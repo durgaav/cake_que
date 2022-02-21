@@ -126,7 +126,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                      width: 1,
                    ),
                 ),
-                height: 65,
+                height: 55,
                 child: ListTile(
                   onTap: (){
                     setState(() {
@@ -158,7 +158,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     width: 1,
                   ),
                 ),
-                height: 65,
+                height: 55,
                 child: ListTile(
                   onTap: (){
                     setState(() {
@@ -190,7 +190,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     width: 1,
                   ),
                 ),
-                height: 65,
+                height: 55,
                 child: ListTile(
                   onTap: (){
                     setState(() {
@@ -282,7 +282,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                   width: MediaQuery.of(context).size.width,
                   height: 50,
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: 75 , left: 20 , right: 20 , bottom: 15),
+                  margin: EdgeInsets.only(top: 50 , left: 20 , right: 20 , bottom: 8),
                   child: MaterialButton(
                     onPressed: (){
                       print("BTN working....");
