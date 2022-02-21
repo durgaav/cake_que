@@ -1,4 +1,5 @@
 import 'package:cake_que/initial_screen.dart';
+import 'package:cake_que/welcome_activity.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -17,7 +18,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InitialScreen()
+      home: WelcomeActivity()
     );
   }
 }

@@ -1,4 +1,6 @@
+import 'package:cake_que/authscreen.dart';
 import 'package:cake_que/cart_activity.dart';
+import 'package:cake_que/login_screen.dart';
 import 'package:cake_que/product_detials.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,6 +46,8 @@ class _HomeState extends State<Home> {
                     leading:InkWell(
                       onTap: (){
                         print("Top menu...");
+                        Navigator.pop(context);
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AuthScreen()));
                       },
                       child: Container(
                         child: Column(

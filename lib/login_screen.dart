@@ -1,3 +1,5 @@
+import 'package:cake_que/home_activity.dart';
+import 'package:cake_que/screens/home.dart';
 import 'package:cake_que/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -74,7 +76,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             borderRadius: new BorderRadius.circular(25.0),
                           ),
                           onPressed:(){
-                            Navigator.push(context, MaterialPageRoute(builder: (contex)=>LoginScreen()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
 
                           },
                           child: Text('Login',style: TextStyle(color: Colors.white,fontSize: 16),)),

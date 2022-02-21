@@ -286,7 +286,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                   child: MaterialButton(
                     onPressed: (){
                       print("BTN working....");
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckoutActivity()));
+                      _bottomSheet(context);
                     },
                     child: Text('Proceed to Pay'
                       , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),
@@ -298,6 +298,55 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
           ),
         ),
       ),
+    );
+  }
+  void _bottomSheet(context) async{
+
+    showModalBottomSheet<void>(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(20.0),
+      ),
+      backgroundColor: Colors.white,
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.only(top:30,left: 30,right: 30),
+          height: MediaQuery.of(context).size.height*2.0,
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(100),
+                    image: DecorationImage(
+                        image: new AssetImage('assets/images/order.jpeg'),fit: BoxFit.cover),
+                  ),
+                  height: 120,
+                  width: 120,
+                ),
+                SizedBox(height:20),
+                Container(
+                  child: Text('THANK YOU!',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color:Color(0Xff5432a8) ),),
+                ),
+                Container(
+                  child: Text('for your order',style: TextStyle(fontSize: 17,color:Color(0Xff5432a8) ),),
+                ),
+                SizedBox(height: 20,),
+                Container(
+                  child: Text('Your Order is now being processed.We will let you know once the order is picked from the outlet.',style: TextStyle(fontSize: 17,),textAlign: TextAlign.center),
+                ),
+
+                SizedBox(height: 25,),
+                Container(
+                  child: Text('BACK TO HOME',style: TextStyle(decoration: TextDecoration.underline,color: Colors.red,fontWeight: FontWeight.bold,),),
+                ),
+                SizedBox(height: 25,)
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }
