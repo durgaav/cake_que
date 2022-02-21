@@ -1,3 +1,4 @@
+import 'package:cake_que/checkout_activity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -47,11 +48,12 @@ class _CartActivityState extends State<CartActivity> {
                 //List View
                 ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: 3,
+                  itemCount: 6,
                   shrinkWrap: true,
                     itemBuilder: (context , index){
                       return Container(
-                        margin: EdgeInsets.only(top: 10),
+                        color: Colors.grey[100],
+                        margin: EdgeInsets.only(top: 2),
                         height: 100,
                         child: Row(
                           children: [
@@ -157,10 +159,10 @@ class _CartActivityState extends State<CartActivity> {
                 //Coupon Code
                 Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    color: Colors.red[50]
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.grey[100],
                   ),
-                  margin: EdgeInsets.only(top: 25,left: 20, right: 20),
+                  margin: EdgeInsets.only(top: 25,left: 9, right: 9),
                   child: TextFormField(
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(3),
@@ -180,11 +182,11 @@ class _CartActivityState extends State<CartActivity> {
                             style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 16),
                           ),
                           Expanded(
-                              child: Container(
-                                alignment: Alignment.centerRight,
-                                child: Text("\₹120",
-                                  style:TextStyle(color: Colors.deepPurple,fontSize: 20),),
-                              ),
+                            child: Container(
+                              alignment: Alignment.centerRight,
+                              child: Text("\₹120",
+                                style:TextStyle(color: Colors.deepPurple,fontSize: 20),),
+                            ),
                           )
                         ],
                       ),
@@ -205,8 +207,10 @@ class _CartActivityState extends State<CartActivity> {
                           )
                         ],
                       ),
-                      SizedBox(
-                        height: 15,
+                      Container(
+                        margin: EdgeInsets.only(left:7,right: 7,top: 15,bottom: 10),
+                        height: 1,
+                        color: Colors.black,
                       ),
                       Row(
                         children: [
@@ -229,22 +233,24 @@ class _CartActivityState extends State<CartActivity> {
                 GestureDetector(
                   onTap: (){
                     print("BTN working....");
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckoutActivity()));
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: Colors.deepPurple
+                        borderRadius: BorderRadius.circular(25),
+                        color: Colors.deepPurple
                     ),
                     width: MediaQuery.of(context).size.width,
-                    height: 60,
+                    height: 50,
                     alignment: Alignment.center,
-                    margin: EdgeInsets.only(top: 80 , left: 20 , right: 20 , bottom: 30),
+                    margin: EdgeInsets.only(top: 75 , left: 20 , right: 20 , bottom: 15),
                     child: MaterialButton(
                       onPressed: (){
                         print("BTN working....");
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckoutActivity()));
                       },
-                      child: Text('Checkout'
-                      , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),
+                      child: Text('Proceed to Pay'
+                        , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),
                       ),
                     ),
                   ),

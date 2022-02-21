@@ -1,3 +1,4 @@
+import 'package:cake_que/cart_activity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -132,21 +133,27 @@ class _HomeState extends State<Home> {
                           ),
                           Stack(
                             children: [
-                              CircleAvatar(
-                                backgroundColor: Colors.pink,
-                                radius: 22,
-                                child: Icon(
-                                  Icons.shopping_basket_outlined,
-                                  color: Colors.white,
+                              InkWell(
+                                onTap:(){
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CartActivity()));
+                                },
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.pink,
+                                  radius: 22,
+                                  child: Icon(
+                                    Icons.shopping_basket_outlined,
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                               Positioned(
                                 left: 24,
+                                top: -1,
                                 child: CircleAvatar(
                                   backgroundColor: Colors.deepPurple,
                                   radius: 10,
                                   child: Center(
-                                    child: Text("5"),
+                                    child: Text("5",style: TextStyle(color: Colors.white),),
                                   ),
                                 ),
                               )

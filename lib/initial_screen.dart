@@ -1,5 +1,7 @@
 import 'package:cake_que/cart_activity.dart';
+import 'package:cake_que/checkout_activity.dart';
 import 'package:cake_que/home_activity.dart';
+import 'package:cake_que/welcome_activity.dart';
 import 'package:flutter/material.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -30,6 +32,18 @@ class _InitialScreenState extends State<InitialScreen> {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>CartActivity()));
                 },
                 child: Text('Cart Activity')
+            ),
+            FlatButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>WelcomeActivity()));
+                },
+                child: Text('Welcome Activity')
+            ),
+            FlatButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckoutActivity()));
+                },
+                child: Text('Checkout Activity')
             ),
           ],
         ),
