@@ -31,7 +31,8 @@ class _HomeActivityState extends State<HomeActivity> {
 
   int currentIndex = 0;
   var screens = [
-    Menu(),
+    Home(),
+    Home(),
     Home(),
   ];
 

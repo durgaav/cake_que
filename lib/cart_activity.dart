@@ -48,13 +48,13 @@ class _CartActivityState extends State<CartActivity> {
                 //List View
                 ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: 6,
+                  itemCount: 4,
                   shrinkWrap: true,
                     itemBuilder: (context , index){
                       return Container(
                         color: Colors.grey[100],
                         margin: EdgeInsets.only(top: 2),
-                        height: 100,
+                        height: 80,
                         child: Row(
                           children: [
                             Column(
@@ -84,7 +84,7 @@ class _CartActivityState extends State<CartActivity> {
                                     Container(
                                       width: 170,
                                       child: Text(' Black forest ${index}',style:
-                                      TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 19),
+                                      TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 17),
                                         maxLines: 2,
                                       ),
                                     )
@@ -92,7 +92,7 @@ class _CartActivityState extends State<CartActivity> {
                                 ),
                                 Container(
                                   child: Text('   ₹120',style:
-                                  TextStyle(color: Colors.black45,fontWeight: FontWeight.bold,fontSize: 22),),
+                                  TextStyle(color: Colors.black45,fontWeight: FontWeight.bold,fontSize: 19),),
                                 ),
                               ],
                             ),
@@ -109,7 +109,7 @@ class _CartActivityState extends State<CartActivity> {
                                           child: CircleAvatar(
                                             backgroundColor: Colors.white,
                                             child: Text("-",style:
-                                            TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 25),),
+                                            TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 20),),
                                             radius: 18,
                                           ),
                                         ),
@@ -249,7 +249,7 @@ class _CartActivityState extends State<CartActivity> {
                         print("BTN working....");
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckoutActivity()));
                       },
-                      child: Text('Proceed to Pay'
+                      child: Text('Checkout'
                         , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),
                       ),
                     ),
