@@ -1,3 +1,4 @@
+import 'package:cake_que/cart_activity.dart';
 import 'package:cake_que/home_activity.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,12 @@ class _InitialScreenState extends State<InitialScreen> {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
                 },
                 child: Text('Home Activity')
+            ),
+            FlatButton(
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>CartActivity()));
+                },
+                child: Text('Cart Activity')
             ),
           ],
         ),
