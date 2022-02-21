@@ -96,7 +96,7 @@ class _HomeActivityState extends State<HomeActivity> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(Icons.person,color: Colors.black54,size: 30,),
+                    Icon(Icons.format_align_right ,color: Colors.black54,size: 30,),
                     Text('More',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,))
                   ],
                 ),
@@ -106,21 +106,4 @@ class _HomeActivityState extends State<HomeActivity> {
     );
   }
 }
-/*
-class RadiantGradientMask extends StatelessWidget {
-  RadiantGradientMask({required this.child});
-  final Widget child;
 
-  @override
-  Widget build(BuildContext context) {
-    return ShaderMask(
-      shaderCallback: (bounds) => RadialGradient(
-        center: Alignment.center,
-        radius: 0.5,
-        colors: [Colors.purpleAccent, Colors.pink],
-        tileMode: TileMode.mirror,
-      ).createShader(bounds),
-      child: child,
-    );
-  }
-}*/

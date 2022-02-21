@@ -17,7 +17,9 @@ class _CartActivityState extends State<CartActivity> {
         elevation: 0,
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: (){},
+          onPressed: (){
+            Navigator.pop(context);
+          },
           icon: Icon(CupertinoIcons.back),
           color: Colors.deepPurple,
           iconSize: 30,

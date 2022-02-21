@@ -19,6 +19,8 @@ class _HomeState extends State<Home> {
     "Nuts cake"
   ];
 
+  String locationText = "Coimbatore";
+
   String selectedValue = "USA";
 
   List<bool> selectedColor = [
@@ -37,36 +39,86 @@ class _HomeState extends State<Home> {
               children: <Widget>[
                 //region APP BAR
                 ListTile(
-                    leading: IconButton(
-                      onPressed: (){},
-                      icon: Icon(Icons.sort),
-                      iconSize: 35,
-                      color: Colors.deepPurpleAccent,
+                    leading:InkWell(
+                      onTap: (){
+                        print("Top menu...");
+                      },
+                      child: Container(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              width: 30,height: 6,
+                              decoration: BoxDecoration(
+                                color: Colors.deepPurple,
+                                borderRadius: BorderRadius.circular(3)
+                              ),
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            Container(
+                              width: 20,height: 6,
+                              decoration: BoxDecoration(
+                                  color: Colors.deepPurple,
+                                  borderRadius: BorderRadius.circular(3)
+                              ),
+                            ),
+                            SizedBox(
+                              height: 4,
+                            ),
+                            CircleAvatar(
+                              radius: 5,
+                              backgroundColor: Colors.pink,
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                     title: Container(
-                        margin: EdgeInsets.only(top:10),
-                        child: Text('Surya',style: TextStyle(color: Colors.black45,fontWeight: FontWeight.w800))),
-                    subtitle:DropdownButtonFormField(
-                      style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold),
-                      decoration: InputDecoration(
-                        border: InputBorder.none
-                      ),
-                      items: ["Coimbatore","Avinashi","Ooty","Java","Flutter"]
-                          .map((e) => DropdownMenuItem(
-                          child: Text(e),
-                          value: e,
-                      )).toList(),
-                      onChanged: (String? s){
-                        setState(() {
-                          selectedValue = s!;
-                        });
-                      },
+                        child: Text('Surya',style: TextStyle(color: Colors.black45,fontWeight: FontWeight.w800))
                     ),
-                    /*subtitle:InkWell(
+                    subtitle:InkWell(
                       onTap: (){
-
+                        showMenu(
+                            context: context,
+                            position: RelativeRect.fromLTRB(100, 100, 100, 100),
+                            items: [
+                              PopupMenuItem(
+                                value: 1,
+                                child: Text("Ooty"),
+                                onTap: (){
+                                  setState(() {
+                                    locationText = "Ooty";
+                                  });
+                                },
+                              ),
+                              PopupMenuItem(
+                                value: 2,
+                                child: Text("Avinashi"),
+                                onTap: (){
+                                  setState(() {
+                                    locationText = "Avinashi";
+                                  });
+                                },
+                              ),
+                              PopupMenuItem(
+                                value: 3,
+                                child: Text("Trichy"),
+                                onTap: (){
+                                  setState(() {
+                                    locationText = "Trichy";
+                                  });
+                                },
+                              ),
+                            ]
+                        );
                       },
-                        child: Text('Avinashi',style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold))),*/
+                        child: Text('${locationText}  v',
+                            style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900)
+                        )
+                    ),
                     trailing:Container(
                       width: 100,
                       child: Row(
@@ -276,8 +328,8 @@ class _HomeState extends State<Home> {
                                                               ,maxLines: 2,)),
                                                         Row(
                                                           children: [
-                                                            Text('\$215',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold),),
-                                                            Text('  \$300',style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal
+                                                            Text('₹215 ',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold),),
+                                                            Text('₹300',style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal
                                                                 ,fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough
                                                             ),),
                                                           ],
