@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 
-class Menu extends StatefulWidget {
+class Offers extends StatefulWidget {
+  const Offers({Key? key}) : super(key: key);
 
   @override
-  _MenuState createState() => _MenuState();
+  _OffersState createState() => _OffersState();
 }
 
-class _MenuState extends State<Menu> {
+class _OffersState extends State<Offers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         height: MediaQuery.of(context).size.height,
         child: Center(
-          child: Text('Menu screen'),
+          child: Text('Offers'),
         ),
       ),
     );
