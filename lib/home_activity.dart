@@ -1,5 +1,8 @@
 import 'package:cake_que/screens/home.dart';
 import 'package:cake_que/screens/menu.dart';
+import 'package:cake_que/screens/more.dart';
+import 'package:cake_que/screens/offers.dart';
+import 'package:cake_que/screens/profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,30 +13,21 @@ class HomeActivity extends StatefulWidget {
 
 class _HomeActivityState extends State<HomeActivity> {
 
-  //region Variables
-
-  List<DropdownMenuItem<String>> get dropdownItems{
-    List<DropdownMenuItem<String>> menuItems = [
-      DropdownMenuItem(child: Text("Avinashi"),value: "Avinashi"),
-      DropdownMenuItem(child: Text("Coimbatore"),value: "Coimbatore"),
-    ];
-    return menuItems;
-  }
-
-  String dropDownValue = "Coimbatore";
-  //endregion
-
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
   }
 
+  String poppins = 'Poppins';
+
   int currentIndex = 0;
   var screens = [
+    Menu(),
+    Offers(),
     Home(),
-    Home(),
-    Home(),
+    Profile(),
+    More(),
   ];
 
   @override
@@ -49,7 +43,7 @@ class _HomeActivityState extends State<HomeActivity> {
           child: Icon(Icons.home,size: 40,),
           onPressed: () {
             setState(() {
-              currentIndex = 1;
+              currentIndex = 2;
             });
           }),
       bottomNavigationBar: BottomAppBar(
@@ -61,46 +55,76 @@ class _HomeActivityState extends State<HomeActivity> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
-                GestureDetector(
+                InkWell(
                   onTap: (){
                     print("menu");
                     setState(() {
                       currentIndex = 0;
+                      print(currentIndex);
                     });
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(Icons.grid_view,color: Colors.black54,size: 30,),
-                      Text('Menu',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,),)
+                      Icon(Icons.grid_view,color: Colors.black54,size: 26,),
+                      Text('Menu',style: TextStyle(fontSize:13,fontWeight: FontWeight.bold,color: Colors.black54,
+                          fontFamily: poppins),)
                     ],
                   ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(CupertinoIcons.bag,color: Colors.black54,size: 30,),
-                    Text('Offers',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,))
-                  ],
+                InkWell(
+                  onTap: (){
+                    print("menu");
+                    setState(() {
+                      currentIndex = 1;
+                      print(currentIndex);
+                    });
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(CupertinoIcons.bag,color: Colors.black54,size: 26,),
+                      Text('Offers',style: TextStyle(fontSize:13,fontWeight: FontWeight.bold,color: Colors.black54,
+                          fontFamily: poppins))
+                    ],
+                  ),
                 ),
                 SizedBox(width: 40),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.person,color: Colors.black54,size: 30,),
-                    Text('Profile',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,))
-                  ],
+                InkWell(
+                  onTap: (){
+                    print("menu");
+                    setState(() {
+                      currentIndex = 3;
+                      print(currentIndex);
+                    });
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.person,color: Colors.black54,size: 26,),
+                      Text('Profile',style: TextStyle(fontSize:13,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: poppins))
+                    ],
+                  ),
                 ), // The dummy child
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.format_align_right ,color: Colors.black54,size: 30,),
-                    Text('More',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black54,))
-                  ],
+                InkWell(
+                  onTap: (){
+                    print("menu");
+                    setState(() {
+                      currentIndex = 4;
+                      print(currentIndex);
+                    });
+                  },
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.format_align_right ,color: Colors.black54,size: 26,),
+                      Text('More',style: TextStyle(fontSize:13,fontWeight: FontWeight.bold,color: Colors.black54,fontFamily: poppins))
+                    ],
+                  ),
                 ),
               ],
             ),
