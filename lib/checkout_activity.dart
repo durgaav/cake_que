@@ -65,13 +65,14 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     ),
                     Container(
                       margin: EdgeInsets.only(left:10,right: 10),
-                      height: 1.5,
+                      height: 0.7,
                       color: Colors.deepPurple,
                     ),
 
                     Container(
                       padding: EdgeInsets.only(top: 14 , left: 14 , right: 14 , bottom: 30),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Container(
                             width:190,

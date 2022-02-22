@@ -56,7 +56,7 @@ class _CartActivityState extends State<CartActivity> {
                       return Container(
                         color: Color(0xffE4FFFD),
                         margin: EdgeInsets.only(top: 2),
-                        height: 80,
+                        height: 85,
                         child: Row(
                           children: [
                             Column(
