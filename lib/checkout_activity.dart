@@ -343,19 +343,22 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                 ),
                 SizedBox(height:20),
                 Container(
-                  child: Text('THANK YOU!',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color:Color(0Xff5432a8) ),),
+                  child: Text('THANK YOU!',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 30,color:Color(0Xff5432a8),
+                  fontFamily: poppins),),
                 ),
                 Container(
-                  child: Text('for your order',style: TextStyle(fontSize: 17,color:Color(0Xff5432a8) ),),
+                  child: Text('for your order',style: TextStyle(fontSize: 17,color:Color(0Xff5432a8) ,fontFamily: poppins),),
                 ),
                 SizedBox(height: 20,),
                 Container(
-                  child: Text('Your Order is now being processed.We will let you know once the order is picked from the outlet.',style: TextStyle(fontSize: 17,),textAlign: TextAlign.center),
+                  child: Text('Your Order is now being processed.We will let you know once the order is picked from the outlet.',
+                      style: TextStyle(fontSize: 15,fontFamily: poppins),textAlign: TextAlign.center),
                 ),
 
                 SizedBox(height: 25,),
                 Container(
-                  child: Text('BACK TO HOME',style: TextStyle(decoration: TextDecoration.underline,color: Colors.red,fontWeight: FontWeight.bold,),),
+                  child: Text('BACK TO HOME',
+                    style: TextStyle(decoration: TextDecoration.underline,color: Colors.red,fontWeight: FontWeight.bold,fontFamily: poppins),),
                 ),
                 SizedBox(height: 25,)
               ],
