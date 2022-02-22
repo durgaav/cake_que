@@ -18,6 +18,7 @@ class _ProductDetialsState extends State<ProductDetials> {
   Color pink = Color(0Xffc40ca3);
   int _selected =0;
   int _selectedval =0;
+  String poppins = 'Poppins';
 
   String flavours = "Chocolate";
   final List<String> flavourlist = ["Chocolate", "Vennila", "Strawberry", "Lemon"];
@@ -101,7 +102,7 @@ double opacity = 0.0;
         ),
         bottomOpacity: 0.0,
         elevation: 0.0,
-        title: Text('ProductDetials',style: TextStyle(color: Color(0Xff5432a8)),),
+        title: Text('ProductDetials',style: TextStyle(color: Color(0Xff5432a8),fontFamily: poppins),),
         actions: [
               Container(
               child: CircleAvatar(
@@ -142,7 +143,7 @@ double opacity = 0.0;
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 9,
-                                  fontWeight: FontWeight.bold),
+                                  fontWeight: FontWeight.bold,fontFamily: poppins),
                             ),
                           ),
                         ),
@@ -230,7 +231,7 @@ double opacity = 0.0;
                         children: [
                           Container(
                             margin: EdgeInsets.only(left: 19,right: 10),
-                            child: Text('Cake Name 1',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold)),
+                            child: Text('Cake Name 1',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,fontFamily: poppins)),
                           ),
 
                           Container(
@@ -249,12 +250,12 @@ double opacity = 0.0;
                                             borderRadius: BorderRadius.circular(20),
                                             color: Colors.grey[100]
                                         ),
-                                        child: Text('\$115',style: TextStyle(fontSize: 19,color: Color(0Xff5432a8),fontWeight: FontWeight.bold),),
+                                        child: Text('\$115',style: TextStyle(fontSize: 19,color: Color(0Xff5432a8),fontWeight: FontWeight.bold,fontFamily: poppins),),
                                       ),
                                       SizedBox(width: 14,),
                                       Container(
                                         child: Text('\$180',style: TextStyle(fontSize: 18,color: Color(0Xff97a1bd),fontWeight: FontWeight.bold,decoration:
-                                        TextDecoration.lineThrough,)),
+                                        TextDecoration.lineThrough,fontFamily: poppins)),
                                       )
                                     ],
                                   ),
@@ -323,19 +324,20 @@ double opacity = 0.0;
                     children: [
                 Container(
                   padding: EdgeInsets.only(top:15,bottom: 10),
-                  child: Text('Description',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold)),
+                  child: Text('Description',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: poppins)),
                 ),
                 Container(
                   padding: EdgeInsets.only(bottom: 18),
 
                   child: Text('14There are a couple ways to add a border to a Flutter widget.built in.For output as above use a'
-                         'Stack instead of Row because of Stack allows us to make multiple widgets overlay each other and you can align or position ',),
+                         'Stack instead of Row because of Stack allows us to make multiple widgets overlay each other and you can align or position ',
+                  style: TextStyle(fontFamily: poppins),),
 
                 ),
                 Divider(color: Colors.black26,thickness: 1,),
                 Container(
                   padding: EdgeInsets.only(top:7,bottom: 10),
-                  child: Text('Widget',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold)),
+                  child: Text('Widget',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: poppins)),
                 ),
 
             Container(
@@ -379,7 +381,7 @@ double opacity = 0.0;
                 Divider(color: Colors.black26,thickness: 1,),
                 Container(
                   padding: EdgeInsets.only(top:7,bottom: 10),
-                  child: Text('Customize your order',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold)),
+                  child: Text('Customize your order',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: poppins)),
                 ),
                 Container(
                   padding: EdgeInsets.only(left: 20,right: 10),
@@ -395,7 +397,7 @@ double opacity = 0.0;
                         .map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value),
+                        child: Text(value,style: TextStyle(fontFamily: poppins),),
                       );
                     }).toList(),
                     onChanged: (String? newValue) {
@@ -403,7 +405,7 @@ double opacity = 0.0;
                         flavours = newValue!;
                       });
                     },
-                    hint: Text('-Select the flavour-'),
+                    hint: Text('-Select the flavour-',style: TextStyle(fontFamily: poppins),),
                   ),
                 ),
                       SizedBox(height: 10,),
@@ -421,7 +423,7 @@ double opacity = 0.0;
                               .map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                               value: value,
-                              child: Text(value),
+                              child: Text(value,style: TextStyle(fontFamily: poppins),),
                             );
                           }).toList(),
                           onChanged: (String? newValue) {
@@ -429,14 +431,14 @@ double opacity = 0.0;
                               caketype = newValue!;
                             });
                           },
-                          hint: Text('-Select the caketype-'),
+                          hint: Text('-Select the caketype-',style: TextStyle(fontFamily: poppins),),
 
 
                         ),
                       ),
                 Container(
                   padding: EdgeInsets.only(top:7,bottom: 10),
-                  child: Text('others',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold)),
+                  child: Text('others',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: poppins)),
                 ),
                       Container(
                         padding: EdgeInsets.only(left: 20,right: 10),
@@ -445,7 +447,7 @@ double opacity = 0.0;
                             color: Colors.blueGrey[50]
                           ),
                         child: ListTile(
-                          title: Text('option1',style: TextStyle(fontSize: 17),),
+                          title: Text('option1',style: TextStyle(fontSize: 17,fontFamily: poppins),),
                             trailing:Radio(
                               value: 1,
                               groupValue: _selectedval,
@@ -465,7 +467,7 @@ double opacity = 0.0;
                               color: Colors.blueGrey[50]
                           ),
                           child: ListTile(
-                            title: Text('option2',style: TextStyle(fontSize: 17),),
+                            title: Text('option2',style: TextStyle(fontSize: 17,fontFamily: poppins),),
                             trailing:Radio(
                                   value: 2,
                                   groupValue: _selectedval,
@@ -486,14 +488,14 @@ double opacity = 0.0;
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text('NearestVendor',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 17),),
+                                Text('NearestVendor',style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold,fontSize: 17,fontFamily: poppins),),
                                 Text('Ramanathapuram'),
                               ],
                             ),
                                   TextButton(onPressed: (){
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=> OtherVendors()));
 
-                                  }, child: Text('+ othervendors',style: TextStyle(color: Colors.red))
+                                  }, child: Text('+ othervendors',style: TextStyle(color: Colors.red,fontFamily: poppins))
 
                                   )
 
@@ -516,7 +518,7 @@ double opacity = 0.0;
                         ),
                           child: ListTile(
                             title: Text(
-                              'MuthuKumar', style: TextStyle(fontSize: 17),),
+                              'MuthuKumar', style: TextStyle(fontSize: 17,fontFamily: poppins),),
                             subtitle: RatingBar.builder(
                               initialRating: 3,
                               minRating: 1,
@@ -564,7 +566,7 @@ double opacity = 0.0;
                               borderRadius: new BorderRadius.circular(25.0),
                             ),
                             onPressed:(){},
-                            child: Text('ADD TO CART',style: TextStyle(color: Colors.white,fontSize: 16),)),
+                            child: Text('ADD TO CART',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily: poppins),)),
                       ),
 
                       SizedBox(

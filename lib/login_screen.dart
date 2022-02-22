@@ -11,6 +11,8 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+
+  String poppins = 'Poppins';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,11 +28,11 @@ class _LoginScreenState extends State<LoginScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      child: Text('LOGIN',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),),
+                      child: Text('LOGIN',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22,fontFamily:poppins),),
                     ),
                     SizedBox(height: 10,),
                     Container(
-                      child: Text('Add your detials to login'),
+                      child: Text('Add your detials to login',style: TextStyle(fontFamily:poppins),),
                     ),
                     SizedBox(height: 40,),
                     Container(
@@ -44,7 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: TextField(
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                          hintText: 'Your Email'
+                          hintText:'Your Email',
+                            hintStyle: TextStyle(fontFamily:poppins)
                         ),
                       )
                     ),
@@ -60,7 +63,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Password'
+                              hintText: 'Password',
+                              hintStyle: TextStyle(fontFamily:poppins)
+
                           ),
                         )
                     ),
@@ -79,20 +84,20 @@ class _LoginScreenState extends State<LoginScreen> {
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
 
                           },
-                          child: Text('Login',style: TextStyle(color: Colors.white,fontSize: 16),)),
+                          child: Text('Login',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily:poppins),)),
                     ),
                     Container(
                       child: TextButton(
                         onPressed: (){},
-                        child: Text('Forgot your password?',style: TextStyle(color: Colors.red, decoration: TextDecoration.underline,)),
+                        child: Text('Forgot your password?',style: TextStyle(color: Colors.red, decoration: TextDecoration.underline,fontFamily:poppins)),
                       ),
                     ),
                     Container(
-                      child: Text('(OR)'),
+                      child: Text('(OR)',style: TextStyle(fontFamily:poppins),),
                     ),
                     SizedBox(height: 20,),
                     Container(
-                      child: Text('login With'),
+                      child: Text('login With',style: TextStyle(fontFamily:poppins),),
                     ),
                     SizedBox(height: 15,),
                     Container(child: Row(
@@ -128,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Dont have an Account?',style: TextStyle(fontSize: 15),),
+                    Text('Dont have an Account?',style: TextStyle(fontSize: 15,fontFamily: poppins),),
                     TextButton(onPressed: (){
                       Navigator.push(context, MaterialPageRoute(builder: (contex)=>SignupScreen()));
                     }, child: Text('Sign Up',style: TextStyle(color: Colors.red,fontSize: 15,fontWeight: FontWeight.bold),))

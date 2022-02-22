@@ -12,6 +12,7 @@ class OtherVendors extends StatefulWidget {
 class _OtherVendorsState extends State<OtherVendors> {
 int _selectedradio = 0;
   bool value =  false;
+  String poppins = 'Poppins';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +27,7 @@ int _selectedradio = 0;
         ),
         bottomOpacity: 0.0,
         elevation: 0.0,
-        title: Text('OtherVendors',style: TextStyle(color: Color(0Xff5432a8)),),
+        title: Text('OtherVendors',style: TextStyle(color: Color(0Xff5432a8),fontFamily: poppins),),
         actions: [
            Container(
              padding: EdgeInsets.symmetric(horizontal: 10),
@@ -55,6 +56,7 @@ int _selectedradio = 0;
                     decoration: InputDecoration(
                         contentPadding: EdgeInsets.all(10),
                         hintText: "Search",
+                        hintStyle: TextStyle(fontFamily: poppins),
                         border: InputBorder.none,
                         prefixIcon: IconButton(
                           onPressed: () {},
@@ -65,7 +67,7 @@ int _selectedradio = 0;
               ),
               Container(
                 padding: EdgeInsets.only(top:10),
-                child: Text('Saibaba Colony'),
+                child: Text('Saibaba Colony',style: TextStyle(fontFamily: poppins),),
               ),
               SizedBox(height: 10,),
               Container(
@@ -85,7 +87,7 @@ int _selectedradio = 0;
                           ),
                           child: ListTile(
                             title: Text(
-                              'MuthuKumar', style: TextStyle(fontSize: 17),),
+                              'MuthuKumar', style: TextStyle(fontSize: 17,fontFamily: poppins),),
                             subtitle: RatingBar.builder(
                               initialRating: 3,
                               minRating: 1,
@@ -139,7 +141,7 @@ int _selectedradio = 0;
                               });
                             }
                           ),
-                          Text('Other vendors 100rs charge extra'),
+                          Text('Other vendors 100rs charge extra',style: TextStyle(fontFamily: poppins),),
                         ],
                       ) ,
                     ),
@@ -155,7 +157,7 @@ int _selectedradio = 0;
                             borderRadius: new BorderRadius.circular(25.0),
                           ),
                           onPressed:(){},
-                          child: Text('Add vendor',style: TextStyle(color: Colors.white,fontSize: 16),)),
+                          child: Text('Add vendor',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily: poppins),)),
                     ),
 
                   ],
