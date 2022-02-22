@@ -10,6 +10,7 @@ class CheckoutActivity extends StatefulWidget {
 
 class _CheckoutActivityState extends State<CheckoutActivity> {
   int selectedRadio = 0;
+  String poppins = 'Poppins';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +26,11 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
           color: Colors.deepPurple,
           iconSize: 30,
         ),
-        title: Text('Checkout',style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 22),),
+        title: Text('Checkout',style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 22,
+            fontFamily: poppins),),
         actions: [
           CircleAvatar(
-            radius: 22,
+            radius: 19,
             backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNqxHhXxQo-mMKSsSU0wv9spXmfSzInG_sg&usqp=CAU"),
           ),
           SizedBox(
@@ -58,7 +60,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                       padding: EdgeInsets.all(12),
                       alignment: Alignment.centerLeft,
                       child: Text(" Delivery Address",style:
-                      TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,fontSize: 17)),
+                      TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,fontSize: 17,
+                          fontFamily: poppins)),
                     ),
                     Container(
                       margin: EdgeInsets.only(left:10,right: 10),
@@ -74,7 +77,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                             width:190,
                             child: Text("1/4 Vellandipalayam,\nThekkalur, Avinashi ,\n"
                                 "641654" ,style:
-                            TextStyle(color: Colors.black45,fontWeight: FontWeight.w900,fontSize: 16),
+                            TextStyle(color: Colors.black45,fontWeight: FontWeight.w900,fontSize: 16,
+                                fontFamily: poppins),
                               maxLines: 3,
                             ),
                           ),
@@ -94,7 +98,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                                       alignment: Alignment.center,
                                       width: 70,
                                       child:Text('Change',
-                                        style: TextStyle(fontSize: 16.5 , color: Colors.deepPurple),
+                                        style: TextStyle(fontSize: 14 , color: Colors.deepPurple,
+                                            fontFamily: poppins),
                                       ),
                                     ),
                                   ),
@@ -113,7 +118,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                 width: double.infinity,
 
                 child: Text('Payment Method',style:
-                TextStyle(color: Colors.black45,fontWeight: FontWeight.w900,fontSize: 17)),
+                TextStyle(color: Colors.black45,fontWeight: FontWeight.w900,fontSize: 17,
+                    fontFamily: poppins)),
               ),
 
               Container(
@@ -134,7 +140,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     });
                   },
                   title: Text('Cash on delivery',style:
-                  TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 17)),
+                  TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 17,
+                      fontFamily: poppins)),
                   trailing: Radio(
                     value: 1,
                     groupValue: selectedRadio,
@@ -166,7 +173,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     });
                   },
                   title: Text('Credit/Debit Card',style:
-                  TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 17)),
+                  TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 17,
+                      fontFamily: poppins)),
                   trailing: Radio(
                     value: 2,
                     groupValue: selectedRadio,
@@ -198,7 +206,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     });
                   },
                   title: Text('UPI',style:
-                  TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 17)),
+                  TextStyle(color: Colors.black,fontWeight: FontWeight.w500,fontSize: 17,
+                      fontFamily: poppins)),
                   trailing: Radio(
                     value: 3,
                     groupValue: selectedRadio,
@@ -219,13 +228,15 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     Row(
                       children: [
                         Text('Sub Total',
-                          style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 14.5),
+                          style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 14.5,
+                              fontFamily: poppins),
                         ),
                         Expanded(
                           child: Container(
                             alignment: Alignment.centerRight,
                             child: Text("\₹120",
-                              style:TextStyle(color: Colors.deepPurple,fontSize: 16),),
+                              style:TextStyle(color: Colors.deepPurple,fontSize: 16,
+                                  fontFamily: poppins),),
                           ),
                         )
                       ],
@@ -236,13 +247,15 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     Row(
                       children: [
                         Text('Delivery Cost',
-                          style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 14.5),
+                          style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 14.5,
+                              fontFamily: poppins),
                         ),
                         Expanded(
                           child: Container(
                             alignment: Alignment.centerRight,
                             child: Text("\₹70",
-                              style:TextStyle(color: Colors.deepPurple,fontSize: 16),),
+                              style:TextStyle(color: Colors.deepPurple,fontSize: 16,
+                                  fontFamily: poppins),),
                           ),
                         )
                       ],
@@ -255,13 +268,15 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     Row(
                       children: [
                         Text('Total',
-                          style:TextStyle(color: Colors.black,fontWeight: FontWeight.w900,fontSize: 18),
+                          style:TextStyle(color: Colors.black,fontWeight: FontWeight.w900,fontSize: 18,
+                              fontFamily: poppins),
                         ),
                         Expanded(
                           child: Container(
                             alignment: Alignment.centerRight,
                             child: Text("\₹190",
-                              style:TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,fontSize: 18),),
+                              style:TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,fontSize: 18,
+                                  fontFamily: poppins),),
                           ),
                         )
                       ],
@@ -289,7 +304,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                       _bottomSheet(context);
                     },
                     child: Text('Proceed to Pay'
-                      , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),
+                      , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18,
+                          fontFamily: poppins),
                     ),
                   ),
                 ),

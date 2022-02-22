@@ -10,6 +10,7 @@ class CartActivity extends StatefulWidget {
 }
 
 class _CartActivityState extends State<CartActivity> {
+  String poppins = 'Poppins';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +26,11 @@ class _CartActivityState extends State<CartActivity> {
           color: Colors.deepPurple,
           iconSize: 30,
         ),
-        title: Text('Cart',style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 22),),
+        title: Text('Cart',style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 22,
+        fontFamily: poppins),),
         actions: [
           CircleAvatar(
-            radius: 22,
+            radius: 19,
             backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNqxHhXxQo-mMKSsSU0wv9spXmfSzInG_sg&usqp=CAU"),
           ),
           SizedBox(
@@ -84,7 +86,8 @@ class _CartActivityState extends State<CartActivity> {
                                     Container(
                                       width: 170,
                                       child: Text(' Black forest ${index}',style:
-                                      TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 17),
+                                      TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 17,
+                                          fontFamily: poppins),
                                         maxLines: 2,
                                       ),
                                     )
@@ -92,7 +95,8 @@ class _CartActivityState extends State<CartActivity> {
                                 ),
                                 Container(
                                   child: Text('   ₹120',style:
-                                  TextStyle(color: Colors.black45,fontWeight: FontWeight.bold,fontSize: 19),),
+                                  TextStyle(color: Colors.black45,fontWeight: FontWeight.bold,fontSize: 19,
+                                      fontFamily: poppins),),
                                 ),
                               ],
                             ),
@@ -104,13 +108,13 @@ class _CartActivityState extends State<CartActivity> {
                                       GestureDetector(
                                         onTap:(){print('hello');},
                                         child: CircleAvatar(
-                                          radius:20,
+                                          radius:19,
                                           backgroundColor: Colors.pink,
                                           child: CircleAvatar(
                                             backgroundColor: Colors.white,
                                             child: Text("-",style:
                                             TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 20),),
-                                            radius: 18,
+                                            radius: 17,
                                           ),
                                         ),
                                       ),
@@ -118,19 +122,20 @@ class _CartActivityState extends State<CartActivity> {
                                       Padding(
                                         padding:EdgeInsets.all(4.0),
                                         child: Text('03',style:
-                                        TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 15),),
+                                        TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,fontSize: 15,
+                                            fontFamily: poppins),),
                                       ),
 
                                       GestureDetector(
                                         onTap:(){print('hello');},
                                         child: CircleAvatar(
-                                          radius:20,
+                                          radius:19,
                                           backgroundColor: Colors.pink,
                                           child: CircleAvatar(
                                             backgroundColor: Colors.pink,
                                             child: Text("+",style:
                                             TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25),),
-                                            radius: 18,
+                                            radius: 17,
                                           ),
                                         ),
                                       ),
@@ -152,7 +157,8 @@ class _CartActivityState extends State<CartActivity> {
                     child: InkWell(
                       onTap:(){print('hello');},
                       child: Text("+ Add Notes",
-                        style:TextStyle(color: Colors.pink,fontWeight: FontWeight.bold,fontSize: 19),
+                        style:TextStyle(color: Colors.pink,fontWeight: FontWeight.bold,fontSize: 19,
+                            fontFamily: poppins),
                       ),
                     ),
                   ),
@@ -167,7 +173,8 @@ class _CartActivityState extends State<CartActivity> {
                     decoration: InputDecoration(
                       contentPadding: EdgeInsets.all(3),
                       hintText: "Apply coupons",
-                      hintStyle:TextStyle(color: Colors.black45,fontSize: 18),
+                      hintStyle:TextStyle(color: Colors.black45,fontSize: 18,
+                          fontFamily: poppins),
                       border: InputBorder.none
                     ),
                   ),
@@ -179,13 +186,15 @@ class _CartActivityState extends State<CartActivity> {
                       Row(
                         children: [
                           Text('Sub Total',
-                            style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 16),
+                            style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 16,
+                                fontFamily: poppins),
                           ),
                           Expanded(
                             child: Container(
                               alignment: Alignment.centerRight,
                               child: Text("\₹120",
-                                style:TextStyle(color: Colors.deepPurple,fontSize: 20),),
+                                style:TextStyle(color: Colors.deepPurple,fontSize: 20,
+                                    fontFamily: poppins),),
                             ),
                           )
                         ],
@@ -196,13 +205,15 @@ class _CartActivityState extends State<CartActivity> {
                       Row(
                         children: [
                           Text('Delivery Cost',
-                            style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 16),
+                            style:TextStyle(color: Colors.black,fontWeight: FontWeight.w600,fontSize: 16,
+                                fontFamily: poppins),
                           ),
                           Expanded(
                             child: Container(
                               alignment: Alignment.centerRight,
                               child: Text("\₹70",
-                                style:TextStyle(color: Colors.deepPurple,fontSize: 20),),
+                                style:TextStyle(color: Colors.deepPurple,fontSize: 20,
+                                    fontFamily: poppins),),
                             ),
                           )
                         ],
@@ -215,13 +226,15 @@ class _CartActivityState extends State<CartActivity> {
                       Row(
                         children: [
                           Text('Total',
-                            style:TextStyle(color: Colors.black,fontWeight: FontWeight.w900,fontSize: 22),
+                            style:TextStyle(color: Colors.black,fontWeight: FontWeight.w900,fontSize: 22,
+                                fontFamily: poppins),
                           ),
                           Expanded(
                             child: Container(
                               alignment: Alignment.centerRight,
                               child: Text("\₹190",
-                                style:TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,fontSize: 22),),
+                                style:TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,fontSize: 22,
+                                    fontFamily: poppins),),
                             ),
                           )
                         ],
@@ -250,7 +263,8 @@ class _CartActivityState extends State<CartActivity> {
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>CheckoutActivity()));
                       },
                       child: Text('Checkout'
-                        , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18),
+                        , style:TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 18,
+                            fontFamily: poppins),
                       ),
                     ),
                   ),

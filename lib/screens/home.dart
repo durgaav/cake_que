@@ -14,6 +14,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
+  String poppins = 'Poppins';
+
   var cakeNames = [
     "Black forest",
     "Venila flaver",
@@ -83,7 +85,9 @@ class _HomeState extends State<Home> {
                       ),
                     ),
                     title: Container(
-                        child: Text('Surya',style: TextStyle(color: Colors.black45,fontWeight: FontWeight.w800))
+                        child: Text('Surya',
+                            style: TextStyle(color: Colors.black45,fontWeight: FontWeight.w800,
+                            fontFamily: poppins))
                     ),
                     subtitle:InkWell(
                       onTap: (){
@@ -122,15 +126,17 @@ class _HomeState extends State<Home> {
                         );
                       },
                         child: Text('${locationText}  v',
-                            style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900)
+                            style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,
+                                fontFamily: poppins)
                         )
                     ),
                     trailing:Container(
                       width: 100,
                       child: Row(
                         children: <Widget>[
+                          SizedBox(width: 13,),
                           CircleAvatar(
-                            radius: 22,
+                            radius: 19,
                             backgroundImage: NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNqxHhXxQo-mMKSsSU0wv9spXmfSzInG_sg&usqp=CAU"),
                           ),
                           SizedBox(
@@ -144,7 +150,7 @@ class _HomeState extends State<Home> {
                                 },
                                 child: CircleAvatar(
                                   backgroundColor: Colors.pink,
-                                  radius: 22,
+                                  radius: 19,
                                   child: Icon(
                                     Icons.shopping_basket_outlined,
                                     color: Colors.white,
@@ -152,13 +158,13 @@ class _HomeState extends State<Home> {
                                 ),
                               ),
                               Positioned(
-                                left: 24,
+                                left: 22,
                                 top: -1,
                                 child: CircleAvatar(
                                   backgroundColor: Colors.deepPurple,
-                                  radius: 10,
+                                  radius: 8,
                                   child: Center(
-                                    child: Text("5",style: TextStyle(color: Colors.white),),
+                                    child: Text("5",style: TextStyle(color: Colors.white,fontSize: 12),),
                                   ),
                                 ),
                               )
@@ -174,12 +180,12 @@ class _HomeState extends State<Home> {
                     //region SEARCH BAR
                     Container(
                       decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20)
+                          color: Colors.black12,
+                          borderRadius: BorderRadius.circular(12)
                       ),
-                      margin: EdgeInsets.only(left: 20,right: 20),
+                      margin: EdgeInsets.only(left: 10,right: 10),
                       alignment: Alignment.centerLeft,
-                      height: 55,
+                      height: 47,
                       width: MediaQuery.of(context).size.width,
                       child: TextFormField(
                         maxLines: 1,
@@ -187,7 +193,8 @@ class _HomeState extends State<Home> {
                             prefixIcon: Icon(Icons.search,color: Colors.black54,),
                             hintText: "Search Cake",
                             border: InputBorder.none,
-                            hintStyle: TextStyle(color: Colors.black54,fontSize: 15,fontWeight: FontWeight.bold)
+                            hintStyle: TextStyle(color: Colors.black54,fontSize: 15,fontWeight: FontWeight.bold,
+                                fontFamily: poppins)
                         ),
                       ),
                     ),
@@ -197,7 +204,8 @@ class _HomeState extends State<Home> {
                       child: Row(
                         children: [
                           Text("Categories",
-                            style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold),),
+                            style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold,
+                                fontFamily: poppins),),
                           Expanded(
                             child: Container(
                               alignment: Alignment.centerRight,
@@ -207,7 +215,8 @@ class _HomeState extends State<Home> {
                                   print(MediaQuery.of(context).size.height * 0.64);
                                 },
                                 child: Text("See all"
-                                  ,style: TextStyle(color: Colors.pink,fontSize: 16,fontWeight: FontWeight.bold),),
+                                  ,style: TextStyle(color: Colors.pink,fontSize: 16,fontWeight: FontWeight.bold,
+                                      fontFamily: poppins),),
                               ),
                             ),
                           ),
@@ -218,12 +227,12 @@ class _HomeState extends State<Home> {
 
                     Container(
                       padding: EdgeInsets.only(bottom: 10),
-                      height: MediaQuery.of(context).size.height * 0.64,
+                      height: MediaQuery.of(context).size.height * 0.66,
                       child: NestedScrollView(
                           headerSliverBuilder: (context, scrolled){
                             return <Widget>[
                               SliverAppBar(
-                                expandedHeight:MediaQuery.of(context).size.height * 0.19,
+                                expandedHeight:MediaQuery.of(context).size.height * 0.24,
                                 //forceElevated: scrolled,
                                 //floating: true,
                                 pinned: false,
@@ -260,6 +269,7 @@ class _HomeState extends State<Home> {
                                                 width: 120,
                                                 child: Column(
                                                   mainAxisAlignment: MainAxisAlignment.center,
+                                                  crossAxisAlignment: CrossAxisAlignment.center,
                                                   children: [
                                                     Container(
                                                       height: 110,
@@ -272,8 +282,9 @@ class _HomeState extends State<Home> {
                                                     Text('Birthday cakes',
                                                       style: TextStyle(
                                                           color: selectedColor[index]==true?
-                                                          Colors.white:Colors.black54,fontSize: 13.5,fontWeight: FontWeight.bold),
-                                                      maxLines: 2,
+                                                          Colors.white:Colors.black54,fontSize: 13.5,fontWeight: FontWeight.bold,
+                                                          fontFamily: poppins),
+                                                      maxLines: 2,textAlign: TextAlign.center,
                                                     )
                                                   ],
                                                 ),
@@ -341,13 +352,16 @@ class _HomeState extends State<Home> {
                                                           Container(
                                                               width:100,
                                                               child: Text(
-                                                                "${cakeNames[index]}",style: TextStyle(color: Colors.pink,fontSize: 16,fontWeight: FontWeight.bold)
+                                                                "${cakeNames[index]}",style: TextStyle(color: Colors.pink,fontSize: 16,fontWeight: FontWeight.bold,
+                                                                  fontFamily: poppins)
                                                                 ,maxLines: 2,)),
                                                           Row(
                                                             children: [
-                                                              Text('₹215 ',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold),),
+                                                              Text('₹215 ',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold,
+                                                                  fontFamily: poppins),),
                                                               Text('₹300',style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal
-                                                                  ,fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough
+                                                                  ,fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough,
+                                                                  fontFamily: poppins
                                                               ),),
                                                             ],
                                                           )
