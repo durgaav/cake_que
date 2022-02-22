@@ -50,11 +50,11 @@ class _CartActivityState extends State<CartActivity> {
                 //List View
                 ListView.builder(
                   physics: NeverScrollableScrollPhysics(),
-                  itemCount: 4,
+                  itemCount: 3,
                   shrinkWrap: true,
                     itemBuilder: (context , index){
                       return Container(
-                        color: Colors.grey[100],
+                        color: Color(0xffE4FFFD),
                         margin: EdgeInsets.only(top: 2),
                         height: 80,
                         child: Row(
@@ -166,7 +166,7 @@ class _CartActivityState extends State<CartActivity> {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
-                    color: Colors.grey[100],
+                    color: Color(0xffE4FFFD),
                   ),
                   margin: EdgeInsets.only(top: 25,left: 9, right: 9),
                   child: TextFormField(

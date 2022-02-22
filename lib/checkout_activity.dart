@@ -47,7 +47,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
               Container(
                 margin: EdgeInsets.only(left:10,right: 10 , top :10),
                 decoration: BoxDecoration(
-                  color: Colors.grey[100],
+                  color: Color(0xffE4FFFD),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: Colors.deepPurple,
@@ -125,7 +125,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
               Container(
                 margin: EdgeInsets.only(left:10,right: 10 , top :10),
                 decoration: BoxDecoration(
-                  color: Colors.grey[100],
+                  color:Color(0xffE4FFFD),
                     borderRadius: BorderRadius.circular(8),
                    border: Border.all(
                      color: Colors.deepPurple,
@@ -158,7 +158,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
               Container(
                 margin: EdgeInsets.only(left:10,right: 10 , top :10),
                 decoration: BoxDecoration(
-                  color: Colors.grey[100],
+                  color: Color(0xffE4FFFD),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: Colors.deepPurple,
@@ -191,7 +191,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
               Container(
                 margin: EdgeInsets.only(left:10,right: 10 , top :10),
                 decoration: BoxDecoration(
-                  color: Colors.grey[100],
+                  color: Color(0xffE4FFFD),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
                     color: Colors.deepPurple,
