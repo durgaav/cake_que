@@ -53,6 +53,7 @@ class _HomeActivityState extends State<HomeActivity> {
             });
           }),
       bottomNavigationBar: BottomAppBar(
+          notchMargin: 10,
           shape: CircularNotchedRectangle(),
           child: Container(
             padding: EdgeInsets.only(left: 15,right: 15),

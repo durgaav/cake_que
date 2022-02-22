@@ -14,6 +14,7 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
   PageController pg = new PageController(viewportFraction: 1, keepPage: true);
   double postition = 100.0;
   int currindex = 0;
+  String poppins = 'Poppins';
   List quotes = [
     "Find cake you love",
     "Easy to customize",
@@ -120,7 +121,8 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                         ),
 
                         Text("${quotes[index]}",
-                          style: TextStyle(fontSize: 23 , color: Colors.deepPurple,fontWeight: FontWeight.w900),
+                          style: TextStyle(fontSize: 23 , color: Colors.deepPurple,fontWeight: FontWeight.w900,
+                              fontFamily: poppins),
                         ),
                         SizedBox(
                           height: 30,
@@ -128,7 +130,8 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                         Container(
                           margin: EdgeInsets.only(left: 25 , right: 25),
                           child: Text("${description[index]}",
-                            style: TextStyle(fontSize: 16 , color: Colors.black45),
+                            style: TextStyle(fontSize: 16 , color: Colors.black45,
+                                fontFamily: poppins),
                             textAlign: TextAlign.center,
                             maxLines: 3,
                           ),
@@ -145,7 +148,8 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
                                 },
                                 child: Text('Skip',
-                                  style: TextStyle(fontSize: 20 , color: Colors.pink,fontWeight: FontWeight.w900),
+                                  style: TextStyle(fontSize: 20 , color: Colors.pink,fontWeight: FontWeight.w900,
+                                      fontFamily: poppins),
                                 ),
                               ),
                               Expanded(
@@ -170,7 +174,8 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                                           mainAxisAlignment: MainAxisAlignment.end,
                                           children: [
                                             Text('Next ',
-                                              style: TextStyle(fontSize: 18 , color: Colors.deepPurple),
+                                              style: TextStyle(fontSize: 18 , color: Colors.deepPurple,
+                                                  fontFamily: poppins),
                                             ),
                                             Icon(Icons.arrow_forward,color: Colors.deepPurple,),
                                           ],
@@ -193,7 +198,8 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                             alignment: Alignment.center,
                             width: 80,
                             child:Text('Done',
-                              style: TextStyle(fontSize: 18 , color: Colors.white),
+                              style: TextStyle(fontSize: 18 , color: Colors.white,
+                                  fontFamily: poppins),
                             ),
                           ),
                         ),
