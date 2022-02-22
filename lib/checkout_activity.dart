@@ -114,7 +114,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(14),
                 width: double.infinity,
 
                 child: Text('Payment Method',style:
