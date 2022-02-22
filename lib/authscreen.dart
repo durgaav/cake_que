@@ -13,6 +13,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   bool _bcolor1 = false;
   bool _bcolor2 = false;
+  String poppins = 'Poppins';
 
   void _toggleclr() {
     setState(() {
@@ -65,7 +66,7 @@ class _AuthScreenState extends State<AuthScreen> {
                      Navigator.push(context, MaterialPageRoute(builder: (contex)=>LoginScreen()));
                     _toggleclr();
                   },
-                  child: Text('Login',style: TextStyle(color:(_bcolor1)?Colors.white:Colors.red,fontSize: 16),)),
+                  child: Text('Login',style: TextStyle(color:(_bcolor1)?Colors.white:Colors.red,fontSize: 16,fontFamily:poppins),)),
             ),
             SizedBox(height: 20,),
             Container(
@@ -81,7 +82,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     _togglecolor();
                     Navigator.push(context, MaterialPageRoute(builder: (contex)=>SignupScreen()));
                   },
-                  child: Text('Create an Account',style: TextStyle(color:(_bcolor2)?Colors.white:Colors.red,fontSize: 16),)),
+                  child: Text('Create an Account',style: TextStyle(color:(_bcolor2)?Colors.white:Colors.red,fontSize: 16,fontFamily:poppins),)),
             ),
           ],
         ),
