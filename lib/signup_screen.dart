@@ -9,6 +9,7 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  String poppins = 'Poppins';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,11 +25,11 @@ class _SignupScreenState extends State<SignupScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      child: Text('SIGN UP',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),),
+                      child: Text('SIGN UP',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22,fontFamily:poppins),),
                     ),
                     SizedBox(height: 10,),
                     Container(
-                      child: Text('Add your detials to sign up'),
+                      child: Text('Add your detials to sign up',style: TextStyle(fontFamily:poppins),),
                     ),
                     SizedBox(height: 40,),
                     Container(
@@ -42,7 +43,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Name'
+                              hintText: 'Name',
+                              hintStyle: TextStyle(fontFamily:poppins)
+
                           ),
                         )
                     ),
@@ -58,7 +61,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Email'
+                              hintText: 'Email',
+                              hintStyle: TextStyle(fontFamily:poppins)
+
                           ),
                         )
                     ),
@@ -74,7 +79,9 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Mobile No'
+                              hintText: 'Mobile No',
+                              hintStyle: TextStyle(fontFamily:poppins)
+
                           ),
                         )
                     ),
@@ -90,7 +97,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Address'
+                              hintText: 'Address',
+                              hintStyle: TextStyle(fontFamily:poppins)
                           ),
                         )
                     ),
@@ -106,7 +114,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Password'
+                              hintText: 'Password',
+                              hintStyle: TextStyle(fontFamily:poppins)
                           ),
                         )
                     ),
@@ -122,7 +131,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         child: TextField(
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              hintText: 'Confirm Password'
+                              hintText: 'Confirm Password',
+                            hintStyle: TextStyle(fontFamily:poppins)
                           ),
                         )
                     ),
@@ -141,7 +151,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           //  Navigator.push(context, MaterialPageRoute(builder: (contex)=>LoginScreen()));
 
                           },
-                          child: Text('Sign Up',style: TextStyle(color: Colors.white,fontSize: 16),)),
+                          child: Text('Sign Up',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily:poppins),)),
                     ),
 
                   ],
@@ -152,10 +162,10 @@ class _SignupScreenState extends State<SignupScreen> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Already have an Account?',style: TextStyle(fontSize: 15),),
+                      Text('Already have an Account?',style: TextStyle(fontSize: 15,fontFamily:poppins),),
                       TextButton(onPressed: (){
                         Navigator.push(context, MaterialPageRoute(builder: (contex)=>LoginScreen()));
-                      }, child: Text('Login',style: TextStyle(color: Colors.red,fontSize: 15,fontWeight: FontWeight.bold),))
+                      }, child: Text('Login',style: TextStyle(color: Colors.red,fontSize: 15,fontWeight: FontWeight.bold,fontFamily:poppins),))
                     ],
                   )
               )
