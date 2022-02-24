@@ -102,7 +102,7 @@ double opacity = 0.0;
         ),
         bottomOpacity: 0.0,
         elevation: 0.0,
-        title: Text('ProductDetials',style: TextStyle(color: Color(0Xff5432a8),fontFamily: poppins),),
+        title: Text('ProductDetails',style: TextStyle(color: Color(0Xff5432a8),fontFamily: poppins),),
         actions: [
               Container(
               child: CircleAvatar(
@@ -197,7 +197,7 @@ double opacity = 0.0;
                                 ),
                               ),
                               Container(
-                                padding: EdgeInsets.all(2),
+                                padding: EdgeInsets.all(3),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(100),
                                   color: Colors.white,
@@ -288,13 +288,13 @@ double opacity = 0.0;
                                       Container(
                                           decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(50),
-                                            border: Border.all(
-                                              color: (icolor2)?Color(0Xffc40ca3):Colors.red,
-                                              width: 1.0,
-                                            ),
+                                            // border: Border.all(
+                                            //   color: (icolor2)?Color(0Xffc40ca3):Colors.red,
+                                            //   width: 1.0,
+                                            // ),
                                           ),
                                           child: CircleAvatar(
-                                              backgroundColor:(icolor2)?Color(0Xffc40ca3):Colors.white,
+                                              backgroundColor:Color(0Xffc40ca3),
                                               child: IconButton(onPressed: (){
                                                 _toggleicolor2();
                                                 if(cartItemCount == 0){
@@ -302,7 +302,7 @@ double opacity = 0.0;
                                                     addedCart.add(0);
                                                   }
                                                 }
-                                              }, icon: Icon(Icons.add,color:(icolor2)?Colors.white:Color(0Xff5432a8),)))
+                                              }, icon: Icon(Icons.add,color:Colors.white)))
                                       ),
                                     ],
                                   ),
@@ -330,11 +330,11 @@ double opacity = 0.0;
                   padding: EdgeInsets.only(bottom: 18),
 
                   child: Text('14There are a couple ways to add a border to a Flutter widget.built in.For output as above use a'
-                         'Stack instead of Row because of Stack allows us to make multiple widgets overlay each other and you can align or position ',
+                         'Stack instead of Row because of Stack allows us to make multiple widgets overlay each other and you can align or position. ',
                   style: TextStyle(fontFamily: poppins),),
 
                 ),
-                Divider(color: Colors.black26,thickness: 1,),
+                Divider(color: Colors.black12,thickness: 1,),
                 Container(
                   padding: EdgeInsets.only(top:7,bottom: 10),
                   child: Text('Widget',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: poppins)),
@@ -378,7 +378,7 @@ double opacity = 0.0;
                 buttonWidth: 60,
               ),
             ),
-                Divider(color: Colors.black26,thickness: 1,),
+                Divider(color: Colors.black12,thickness: 1,),
                 Container(
                   padding: EdgeInsets.only(top:7,bottom: 10),
                   child: Text('Customize your order',style: TextStyle(fontSize: 16,color: Colors.black,fontWeight: FontWeight.bold,fontFamily: poppins)),
@@ -495,7 +495,7 @@ double opacity = 0.0;
                                   TextButton(onPressed: (){
                                     Navigator.push(context, MaterialPageRoute(builder: (context)=> OtherVendors()));
 
-                                  }, child: Text('+ othervendors',style: TextStyle(color: Colors.red,fontFamily: poppins))
+                                  }, child: Text('+ Other Vendors',style: TextStyle(color: Colors.red,fontFamily: poppins))
 
                                   )
 
@@ -536,7 +536,7 @@ double opacity = 0.0;
                               },
                             ),
                             trailing: Radio(
-                              value: _selected,
+                              value: 3,
                               groupValue: index,
                               activeColor: Colors.blue,
                               onChanged: (int? val) {
@@ -566,7 +566,7 @@ double opacity = 0.0;
                               borderRadius: new BorderRadius.circular(25.0),
                             ),
                             onPressed:(){},
-                            child: Text('ADD TO CART',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily: poppins),)),
+                            child: Text('Add To Cart',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily: poppins),)),
                       ),
 
                       SizedBox(

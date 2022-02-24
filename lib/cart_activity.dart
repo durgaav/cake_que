@@ -157,7 +157,7 @@ class _CartActivityState extends State<CartActivity> {
                     child: InkWell(
                       onTap:(){print('hello');},
                       child: Text("+ Add Notes",
-                        style:TextStyle(color: Colors.pink,fontWeight: FontWeight.bold,fontSize: 19,
+                        style:TextStyle(color: Colors.pink,fontWeight: FontWeight.bold,fontSize: 14,
                             fontFamily: poppins),
                       ),
                     ),
@@ -219,9 +219,9 @@ class _CartActivityState extends State<CartActivity> {
                         ],
                       ),
                       Container(
-                        margin: EdgeInsets.only(left:7,right: 7,top: 15,bottom: 10),
+                        margin: EdgeInsets.only(top: 15,bottom: 10),
                         height: 1,
-                        color: Colors.black,
+                        color: Colors.black12,
                       ),
                       Row(
                         children: [

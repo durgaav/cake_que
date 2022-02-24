@@ -1,7 +1,7 @@
 import 'package:cake_que/home_activity.dart';
-import 'package:cake_que/screens/home.dart';
 import 'package:cake_que/signup_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -24,15 +24,13 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 padding: EdgeInsets.all(20),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
                       child: Text('LOGIN',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22,fontFamily:poppins),),
                     ),
                     SizedBox(height: 10,),
                     Container(
-                      child: Text('Add your detials to login',style: TextStyle(fontFamily:poppins),),
+                      child: Text('Add your details to login',style: TextStyle(fontFamily:poppins),),
                     ),
                     SizedBox(height: 40,),
                     Container(
@@ -107,7 +105,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: 40,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.blueAccent
+                                color: Colors.blueAccent,
+                              boxShadow:[ BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 4.0,
+                                  offset:Offset(1.0,1.0)
+                              )
+                              ],
                             ),
                             child: IconButton(onPressed: (){}, icon: Icon(Icons.facebook_outlined,color: Colors.white,))
                         ),
@@ -117,18 +121,23 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: 40,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(30),
-                                color: Colors.red
+                                color: Colors.red,
+                              boxShadow:[ BoxShadow(
+                                  color: Colors.grey,
+                                  blurRadius: 4.0,
+                                  offset:Offset(1.0,1.0)
+                              )
+                              ],
                             ),
-                            child: IconButton(onPressed: (){}, icon: Icon(Icons.g_mobiledata,color: Colors.white,size: 30,))
+                            child: IconButton(onPressed: (){},icon: Icon(FontAwesomeIcons.google,color: Colors.white,size: 20,))
                         ),
-
                       ],
                     ),)
                   ],
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 10),
+                margin: EdgeInsets.only(top:160),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -138,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     }, child: Text('Sign Up',style: TextStyle(color: Colors.red,fontSize: 15,fontWeight: FontWeight.bold),))
                   ],
                 )
-              )
+              ),
             ],
           ),
         ),

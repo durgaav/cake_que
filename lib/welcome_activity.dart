@@ -1,5 +1,4 @@
-import 'package:cake_que/home_activity.dart';
-import 'package:cake_que/login_screen.dart';
+import 'package:cake_que/authscreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -80,8 +79,9 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Container(
-                          height: 200,
-                          width: 150,
+                          margin: EdgeInsets.only(top: 90),
+                          height: 250,
+                          width: 170,
                           decoration: BoxDecoration(
                             image: DecorationImage(
                               fit: BoxFit.fill,
@@ -90,7 +90,7 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                           ),
                         ),
                         SizedBox(
-                          height: 40,
+                          height: 60,
                         ),
 
                         Row(
@@ -126,7 +126,7 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                               fontFamily: poppins),
                         ),
                         SizedBox(
-                          height: 30,
+                          height: 20,
                         ),
                         Container(
                           margin: EdgeInsets.only(left: 25 , right: 25),
@@ -139,14 +139,15 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                         ),
 
                         Container(
-                          margin: EdgeInsets.only(top: 55 , left: 20 , right: 20),
+                          margin: EdgeInsets.symmetric(horizontal: 30),
+                          padding:EdgeInsets.only(top: 50),
                           child: index!=2?Row(
                             children: [
                               InkWell(
                                 onTap: (){
                                   print('skipped welcome...');
                                   Navigator.of(context).pop();
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>AuthScreen()));
                                 },
                                 child: Text('Skip',
                                   style: TextStyle(fontSize: 20 , color: Colors.pink,fontWeight: FontWeight.w900,
@@ -190,14 +191,15 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                           ):RaisedButton(
                           color: Colors.deepPurple,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15)),
+                              borderRadius: BorderRadius.circular(30)),
                           onPressed: (){
                             Navigator.of(context).pop();
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>AuthScreen()));
                           },
                           child: Container(
                             alignment: Alignment.center,
                             width: 80,
+                            height:50,
                             child:Text('Done',
                               style: TextStyle(fontSize: 18 , color: Colors.white,
                                   fontFamily: poppins),

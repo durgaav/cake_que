@@ -1,7 +1,5 @@
-import 'package:cake_que/authscreen.dart';
 import 'package:cake_que/cart_activity.dart';
-import 'package:cake_que/login_screen.dart';
-import 'package:cake_que/product_detials.dart';
+import 'package:cake_que/product_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -30,12 +28,13 @@ class _HomeState extends State<Home> {
   String selectedValue = "USA";
 
   List<bool> selectedColor = [
-    false , false , false , false , false , false , false
+    true , false , false , false , false , false , false
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffFCFAFB),
       body: SafeArea(
         child: Container(
           color: Colors.white,
@@ -57,8 +56,8 @@ class _HomeState extends State<Home> {
                             Container(
                               width: 30,height: 6,
                               decoration: BoxDecoration(
-                                color: Colors.deepPurple,
-                                borderRadius: BorderRadius.circular(3)
+                                  color: Colors.deepPurple,
+                                  borderRadius: BorderRadius.circular(3)
                               ),
                             ),
                             SizedBox(
@@ -85,44 +84,44 @@ class _HomeState extends State<Home> {
                     title: Container(
                         child: Text('Surya',
                             style: TextStyle(color: Colors.black45,fontWeight: FontWeight.w800,
-                            fontFamily: poppins))
+                                fontFamily: poppins))
                     ),
                     subtitle:InkWell(
-                      onTap: (){
-                        showMenu(
-                            context: context,
-                            position: RelativeRect.fromLTRB(100, 100, 100, 100),
-                            items: [
-                              PopupMenuItem(
-                                value: 1,
-                                child: Text("Ooty"),
-                                onTap: (){
-                                  setState(() {
-                                    locationText = "Ooty";
-                                  });
-                                },
-                              ),
-                              PopupMenuItem(
-                                value: 2,
-                                child: Text("Avinashi"),
-                                onTap: (){
-                                  setState(() {
-                                    locationText = "Avinashi";
-                                  });
-                                },
-                              ),
-                              PopupMenuItem(
-                                value: 3,
-                                child: Text("Trichy"),
-                                onTap: (){
-                                  setState(() {
-                                    locationText = "Trichy";
-                                  });
-                                },
-                              ),
-                            ]
-                        );
-                      },
+                        onTap: (){
+                          showMenu(
+                              context: context,
+                              position: RelativeRect.fromLTRB(100, 100, 100, 100),
+                              items: [
+                                PopupMenuItem(
+                                  value: 1,
+                                  child: Text("Ooty"),
+                                  onTap: (){
+                                    setState(() {
+                                      locationText = "Ooty";
+                                    });
+                                  },
+                                ),
+                                PopupMenuItem(
+                                  value: 2,
+                                  child: Text("Avinashi"),
+                                  onTap: (){
+                                    setState(() {
+                                      locationText = "Avinashi";
+                                    });
+                                  },
+                                ),
+                                PopupMenuItem(
+                                  value: 3,
+                                  child: Text("Trichy"),
+                                  onTap: (){
+                                    setState(() {
+                                      locationText = "Trichy";
+                                    });
+                                  },
+                                ),
+                              ]
+                          );
+                        },
                         child: Text('${locationText}',
                             style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,
                                 fontFamily: poppins)
@@ -178,7 +177,7 @@ class _HomeState extends State<Home> {
                     //region SEARCH BAR
                     Container(
                       decoration: BoxDecoration(
-                          color: Colors.black12,
+                          color: Color(0xffFCFAFB),
                           borderRadius: BorderRadius.circular(12)
                       ),
                       margin: EdgeInsets.only(left: 10,right: 10),
@@ -202,7 +201,7 @@ class _HomeState extends State<Home> {
                       child: Row(
                         children: [
                           Text("Categories",
-                            style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,
+                            style: TextStyle(color: Colors.deepPurple,fontSize: 17,fontWeight: FontWeight.bold,
                                 fontFamily: poppins),),
                           Expanded(
                             child: Container(
@@ -224,181 +223,167 @@ class _HomeState extends State<Home> {
                     //endregion
 
                     Container(
-                      padding: EdgeInsets.only(bottom: 10),
-                      height: MediaQuery.of(context).size.height * 0.66,
-                      child: NestedScrollView(
-                          headerSliverBuilder: (context, scrolled){
-                            return <Widget>[
-                              SliverAppBar(
-                                expandedHeight:MediaQuery.of(context).size.height * 0.24,
-                                //forceElevated: scrolled,
-                                //floating: true,
-                                pinned: false,
-                                backgroundColor: Colors.white,
-                                flexibleSpace: FlexibleSpaceBar(
-                                  background: Container(
-                                    height: 250,
-                                    width: double.infinity,
-                                    child:Container(
-                                      margin: EdgeInsets.only(top: 10,right: 10),
-                                      height: MediaQuery.of(context).size.height * 0.18,
-                                      child: ListView.builder(
-                                          itemCount: 7,
-                                          scrollDirection: Axis.horizontal,
-                                          itemBuilder: (context , index){
-                                            return GestureDetector(
-                                              onTap: (){
-                                                setState(() {
-                                                  if(selectedColor[index]==false){
-                                                    selectedColor[index]=true;
-                                                  }else{
-                                                    selectedColor[index]=false;
-                                                  }
-                                                });
-                                              },
-                                              child:Container(
-                                                padding:EdgeInsets.all(3),
-                                                margin: EdgeInsets.only(left: 20),
-                                                decoration: BoxDecoration(
-                                                    color: selectedColor[index]==true?Colors.deepPurple:Colors.white,
-                                                    borderRadius: BorderRadius.circular(15)
-                                                ),
-                                                height: 130,
-                                                width: 120,
-                                                child: Column(
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                                  children: [
-                                                    Container(
-                                                      height: 110,
-                                                      decoration: BoxDecoration(
-                                                          image: DecorationImage(
-                                                              image: AssetImage("assets/images/cake.png")
-                                                          )
-                                                      ),
-                                                    ),
-                                                    Text('Birthday cakes',
-                                                      style: TextStyle(
-                                                          color: selectedColor[index]==true?
-                                                          Colors.white:Colors.black54,fontSize: 13.5,fontWeight: FontWeight.bold,
-                                                          fontFamily: poppins),
-                                                      maxLines: 2,textAlign: TextAlign.center,
-                                                    )
-                                                  ],
-                                                ),
-                                              ),
-
-                                            );
-                                          }
-                                      ),
-                                    )
-                                  ),
-
-                                ),
-                                leading: Container(),
-                              ),
-                            ];
-                          },
-                          body: CustomScrollView(
-                              slivers: [
-                                SliverList(
-                                    delegate: SliverChildBuilderDelegate(
-                                        (context , index)=>GestureDetector(
-                                          onTap: (){
-                                            Navigator.push(context, MaterialPageRoute(
-                                                builder: (context)=>ProductDetials()));
+                      height:MediaQuery.of(context).size.height * 0.66,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            Container(
+                                height: 120,
+                                padding: EdgeInsets.only(bottom: 4),
+                                // color:Colors.black12,
+                                child:ListView.builder(
+                                    scrollDirection: Axis.horizontal,
+                                    itemCount: selectedColor.length,
+                                    itemBuilder: (context , index)=>
+                                        InkWell(
+                                          onTap:(){
+                                            setState(() {
+                                              if(selectedColor[index]==false){
+                                                selectedColor[index]=true;
+                                              }else{
+                                                selectedColor[index]=false;
+                                              }
+                                            });
                                           },
                                           child: Container(
-                                            margin: EdgeInsets.only(left: 10,right: 10,bottom: 10),
-                                            child:Stack(
+                                            padding: EdgeInsets.all(4),
+                                            width: 90,
+                                            decoration: BoxDecoration(
+                                              color: selectedColor[index]==true?Colors.deepPurple:Color(0xffFCFAFB),
+                                              borderRadius:BorderRadius.circular(7),
+                                            ),
+                                            margin: EdgeInsets.all(2),
+                                            child: Column(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              mainAxisAlignment: MainAxisAlignment.center,
                                               children: [
                                                 Container(
-                                                  margin: EdgeInsets.only(top: 55),
-                                                  height: 100,
-                                                  child: Card(
-                                                    shape: RoundedRectangleBorder(
-                                                      borderRadius: BorderRadius.circular(18.0),
-                                                    ),
-                                                    elevation: 10,
-                                                    child: ListTile(),
-                                                  ),
-                                                ),
-                                                Positioned(
-                                                  bottom:40,
-                                                  left:20,
-                                                  child: Container(
-                                                    height : 100,
-                                                    width:100,
-                                                    decoration: BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: NetworkImage("https://www.pngitem.com/pimgs/m/22-221065_pastry-cake-png-transparent-png.png"),
-                                                          fit: BoxFit.cover
-                                                      ),
-                                                      color: Colors.white54,
-                                                      shape: BoxShape.circle,
+                                                  height: 50,
+                                                  width: 50,
+                                                  child: Image(
+                                                    image: NetworkImage(
+                                                        "https://justquikr.com/wp-content/uploads/2020/11/Special-Unique-Happy-Birthday-Cake-HD-Pics-Images-for-Honey-4.jpg"
                                                     ),
                                                   ),
                                                 ),
-                                                Positioned(
-                                                  left:140,
-                                                  top:70,
-                                                  child: Row(
-                                                    children: [
-                                                      Column(
-                                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                                        children: [
-                                                          Container(
-                                                              width:100,
-                                                              child: Text(
-                                                                "${cakeNames[index]}",style: TextStyle(color: Colors.pink,fontSize: 16,fontWeight: FontWeight.bold,
-                                                                  fontFamily: poppins)
-                                                                ,maxLines: 2,)),
-                                                          Row(
-                                                            children: [
-                                                              Text('₹215 ',style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold,
-                                                                  fontFamily: poppins),),
-                                                              Text('₹300',style: TextStyle(color: Colors.black54,fontSize: 16,fontWeight: FontWeight.normal
-                                                                  ,fontStyle: FontStyle.italic,decoration: TextDecoration.lineThrough,
-                                                                  fontFamily: poppins
-                                                              ),),
-                                                            ],
-                                                          )
-                                                        ],
-                                                      ),
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      // ,
-                                                      InkWell
-                                                        (
-                                                          onTap: (){
-                                                            print("add to favorite");
-                                                          },
-                                                          child:Icon(Icons.shopping_basket_outlined,color: Colors.pink,)),
-                                                      SizedBox(
-                                                        width: 10,
-                                                      ),
-                                                      InkWell
-                                                        (
-                                                          onTap: (){
-                                                            print("add to favorite");
-                                                          },
-                                                          child: Icon(Icons.favorite,color: Colors.deepPurple,))
-                                                    ],
-                                                  ),
-                                                ),
+                                                Text('Birthday \ncake',style:
+                                                TextStyle(color:selectedColor[index]==true?
+                                                Colors.white:Colors.black54,fontSize: 12,fontWeight: FontWeight.w600)
+                                                  ,textAlign: TextAlign.center,)
                                               ],
                                             ),
                                           ),
-                                        ),
-                                       childCount: cakeNames.length
-                                    )
+                                        )
                                 )
-                              ],
-                          )
+                            ),
+                            Container(
+                              child: ListView.builder(
+                                itemCount: 10,
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemBuilder: (context , index)=>
+                                    GestureDetector(
+                                      onTap: (){
+                                        Navigator.push(context, MaterialPageRoute(builder: (context)=>ProductDetials()));
+                                      },
+                                      child: Container(
+                                          alignment: Alignment.bottomLeft,
+                                          margin: EdgeInsets.only(top:2),
+                                          child:Stack(
+                                            alignment: Alignment.center,
+                                            children: [
+                                              Container(
+                                                margin: EdgeInsets.only(top:25),
+                                                height: 80,
+                                                child: Card(
+                                                  shape: RoundedRectangleBorder(
+                                                    borderRadius: BorderRadius.circular(18.0),
+                                                  ),
+                                                  elevation: 10,
+                                                  child: ListTile(),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                bottom:20,
+                                                left:20,
+                                                child: Container(
+                                                  height : 80,
+                                                  width:80,
+                                                  decoration: BoxDecoration(
+                                                    image: DecorationImage(
+                                                        image:
+                                                        NetworkImage("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNqxHhXxQo-mMKSsSU0wv9spXmfSzInG_sg&usqp=CAU"),
+                                                        fit: BoxFit.cover
+                                                    ),
+                                                    color: Colors.white54,
+                                                    shape: BoxShape.circle,
+                                                  ),
+                                                ),
+                                              ),
+                                              Positioned(
+                                                  left: 110,
+                                                  top: 40,
+                                                  child: Row(
+                                                    children: [
+                                                      Column(
+                                                        mainAxisAlignment: MainAxisAlignment.center,
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        children: [
+                                                          Text('Cake name $index',style: TextStyle(
+                                                              fontSize: 15,color: Colors.pink,fontFamily: poppins),maxLines: 1,),
+                                                          Row(
+                                                            children: [
+                                                              Text('\$125',style: TextStyle(
+                                                                  fontSize: 17,color: Colors.deepPurple,fontWeight: FontWeight.bold,fontFamily: poppins
+                                                              ),),
+                                                              Text('\t\$125',style: TextStyle(
+                                                                  fontSize: 14,
+                                                                  color: Colors.black26,fontWeight: FontWeight.w600,decoration: TextDecoration.lineThrough,fontFamily: poppins
+                                                              ),),
+                                                            ],
+                                                          ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  )
+                                              ),
+                                              Positioned(
+                                                right: 20,
+                                                bottom: 20,
+                                                child: Container(
+                                                  width: 150,
+                                                  child: Row(
+                                                    mainAxisAlignment: MainAxisAlignment.end,
+                                                    children: [
+                                                      InkWell(
+                                                        onTap:(){print('cart icon');},
+                                                        child: CircleAvatar(
+                                                            backgroundColor: Colors.black12,
+                                                            child: Icon(Icons.shopping_basket_outlined,color: Colors.pink,)
+                                                        ),
+                                                      ),
+                                                      SizedBox(width: 10,),
+                                                      InkWell(
+                                                        onTap:(){print('Fav icon');},
+                                                        child: CircleAvatar(
+                                                            backgroundColor: Colors.black12,
+                                                            child: Icon(Icons.favorite,color: Colors.deepPurple)
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          )
+                                      ),
+                                    ),
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
-                    )
-
+                    ),
                   ],
                 )
               ],

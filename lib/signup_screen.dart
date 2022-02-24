@@ -29,7 +29,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     ),
                     SizedBox(height: 10,),
                     Container(
-                      child: Text('Add your detials to sign up',style: TextStyle(fontFamily:poppins),),
+                      child: Text('Add your details to sign up',style: TextStyle(fontFamily:poppins),),
                     ),
                     SizedBox(height: 40,),
                     Container(

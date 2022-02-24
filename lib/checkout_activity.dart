@@ -1,3 +1,4 @@
+import 'package:cake_que/home_activity.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -49,10 +50,10 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                 decoration: BoxDecoration(
                   color: Color(0xffE4FFFD),
                   borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: Colors.deepPurple,
-                    width: 0.5,
-                  ),
+                  // border: Border.all(
+                  //   color: Colors.deepPurple,
+                  //   width: 0.5,
+                  // ),
                 ),
                 child: Column(
                   children: [
@@ -65,8 +66,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                     ),
                     Container(
                       margin: EdgeInsets.only(left:10,right: 10),
-                      height: 0.7,
-                      color: Colors.deepPurple,
+                      height: 2,
+                      color: Colors.white,
                     ),
 
                     Container(
@@ -84,7 +85,8 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                             ),
                           ),
                           Expanded(
-                            child: Row(
+                             child:
+                            Row(
                               mainAxisAlignment: MainAxisAlignment.end,
                               children: [
                                 Container(
@@ -129,7 +131,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                   color:Color(0xffE4FFFD),
                     borderRadius: BorderRadius.circular(8),
                    border: Border.all(
-                     color: Colors.deepPurple,
+                     color: Colors.black12,
                      width: 1,
                    ),
                 ),
@@ -162,7 +164,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                   color: Color(0xffE4FFFD),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: Colors.deepPurple,
+                    color: Colors.black12,
                     width: 1,
                   ),
                 ),
@@ -195,7 +197,7 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                   color: Color(0xffE4FFFD),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: Colors.deepPurple,
+                    color: Colors.black12,
                     width: 1,
                   ),
                 ),
@@ -262,9 +264,9 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
                       ],
                     ),
                     Container(
-                      margin: EdgeInsets.only(left:7,right: 7,top: 15,bottom: 10),
+                      margin: EdgeInsets.only(top: 15,bottom: 10),
                       height: 1,
-                      color: Colors.black,
+                      color: Colors.black12,
                     ),
                     Row(
                       children: [
@@ -358,8 +360,12 @@ class _CheckoutActivityState extends State<CheckoutActivity> {
 
                 SizedBox(height: 25,),
                 Container(
-                  child: Text('BACK TO HOME',
-                    style: TextStyle(decoration: TextDecoration.underline,color: Colors.red,fontWeight: FontWeight.bold,fontFamily: poppins),),
+                  // child: Text(),
+                  child: TextButton(child:Text('BACK TO HOME',
+                       style: TextStyle(decoration: TextDecoration.underline,color: Colors.red,fontWeight: FontWeight.bold,fontFamily: poppins),),
+                    onPressed:(){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
+                    } ,),
                 ),
                 SizedBox(height: 25,)
               ],

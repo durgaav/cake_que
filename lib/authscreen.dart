@@ -57,23 +57,22 @@ class _AuthScreenState extends State<AuthScreen> {
               width: MediaQuery.of(context).size.width,
               height: 50,
               child: RaisedButton(
-                  color:(_bcolor1)?Color(0Xff5432a8):Colors.white ,
+                  color:Color(0Xff5432a8) ,
                   shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(25.0),
-                      side: BorderSide(color:(_bcolor1)?Color(0Xff5432a8): Colors.red)
                   ),
                   onPressed:(){
                      Navigator.push(context, MaterialPageRoute(builder: (contex)=>LoginScreen()));
                     _toggleclr();
                   },
-                  child: Text('Login',style: TextStyle(color:(_bcolor1)?Colors.white:Colors.red,fontSize: 16,fontFamily:poppins),)),
+                  child: Text('Login',style: TextStyle(color:Colors.white,fontSize: 16,fontFamily:poppins),)),
             ),
             SizedBox(height: 20,),
             Container(
               width: MediaQuery.of(context).size.width,
               height: 50,
               child: RaisedButton(
-                  color:(_bcolor2)?Color(0Xff5432a8):Colors.white ,
+                  color:(_bcolor2)?Color(0Xff5432a8):Colors.white,
                   shape: new RoundedRectangleBorder(
                     borderRadius: new BorderRadius.circular(25.0),
                     side: BorderSide(color:(_bcolor2)?Color(0Xff5432a8): Colors.red)

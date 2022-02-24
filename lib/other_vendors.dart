@@ -46,22 +46,32 @@ int _selectedradio = 0;
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Card(
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        contentPadding: EdgeInsets.all(10),
-                        hintText: "Search",
-                        hintStyle: TextStyle(fontFamily: poppins),
-                        border: InputBorder.none,
-                        prefixIcon: IconButton(
-                          onPressed: () {},
-                          icon: Icon(Icons.search),
-                        )),
+              Container(
+                decoration: BoxDecoration(
+                  boxShadow:[ BoxShadow(
+                      color: Colors.black12,
+                      blurRadius: 6.0,
+                      offset:Offset(0.0,0.0)
+                  )
+                  ],
+                ),
+                child: Card(
+                  child: Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    child: TextFormField(
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.all(10),
+                          hintText: "Search",
+                          hintStyle: TextStyle(fontFamily: poppins),
+                          border: InputBorder.none,
+                          prefixIcon: IconButton(
+                            onPressed: () {},
+                            icon: Icon(Icons.search),
+                          )),
+                    ),
                   ),
                 ),
               ),
@@ -105,7 +115,7 @@ int _selectedradio = 0;
                               },
                             ),
                             trailing: Radio(
-                              value: _selectedradio,
+                              value: 3,
                               groupValue: index,
                               activeColor: Colors.blue,
                               onChanged: (int? val) {
@@ -134,12 +144,19 @@ int _selectedradio = 0;
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                             Checkbox(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(4.0),
+                              ),
+                              side: MaterialStateBorderSide.resolveWith(
+                                    (states) => BorderSide(width: 2.0, color: Colors.green),
+                              ),
+                            activeColor: Colors.green,
                             value: value,
                             onChanged: (bool? newvalue) {
                               setState(() {
                                 value = newvalue!;
                               });
-                            }
+                            },
                           ),
                           Text('Other vendors 100rs charge extra',style: TextStyle(fontFamily: poppins),),
                         ],
