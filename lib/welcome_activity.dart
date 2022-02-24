@@ -1,4 +1,5 @@
 import 'package:cake_que/home_activity.dart';
+import 'package:cake_que/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -145,7 +146,7 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                                 onTap: (){
                                   print('skipped welcome...');
                                   Navigator.of(context).pop();
-                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                                 },
                                 child: Text('Skip',
                                   style: TextStyle(fontSize: 20 , color: Colors.pink,fontWeight: FontWeight.w900,
@@ -192,7 +193,7 @@ class _WelcomeActivityState extends State<WelcomeActivity> {
                               borderRadius: BorderRadius.circular(15)),
                           onPressed: (){
                             Navigator.of(context).pop();
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
                           },
                           child: Container(
                             alignment: Alignment.center,

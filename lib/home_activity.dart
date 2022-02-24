@@ -21,7 +21,7 @@ class _HomeActivityState extends State<HomeActivity> {
 
   String poppins = 'Poppins';
 
-  int currentIndex = 0;
+  int currentIndex = 2;
   var screens = [
     Menu(),
     Offers(),

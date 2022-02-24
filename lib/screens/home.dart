@@ -48,8 +48,6 @@ class _HomeState extends State<Home> {
                     leading:InkWell(
                       onTap: (){
                         print("Top menu...");
-                        Navigator.pop(context);
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=>AuthScreen()));
                       },
                       child: Container(
                         child: Column(
@@ -125,7 +123,7 @@ class _HomeState extends State<Home> {
                             ]
                         );
                       },
-                        child: Text('${locationText}  v',
+                        child: Text('${locationText}',
                             style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.w900,
                                 fontFamily: poppins)
                         )
@@ -204,7 +202,7 @@ class _HomeState extends State<Home> {
                       child: Row(
                         children: [
                           Text("Categories",
-                            style: TextStyle(color: Colors.deepPurple,fontSize: 20,fontWeight: FontWeight.bold,
+                            style: TextStyle(color: Colors.deepPurple,fontWeight: FontWeight.bold,
                                 fontFamily: poppins),),
                           Expanded(
                             child: Container(

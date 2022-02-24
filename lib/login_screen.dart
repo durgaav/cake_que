@@ -82,7 +82,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           onPressed:(){
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeActivity()));
-
                           },
                           child: Text('Login',style: TextStyle(color: Colors.white,fontSize: 16,fontFamily:poppins),)),
                     ),
